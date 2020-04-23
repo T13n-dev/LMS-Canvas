@@ -12,3 +12,8 @@ vi:
     config.i18n.load_path << Rails.root.join('config', 'locales', 'locales.yml')
     config.i18n.default_locale = :vi
 ```
+# Issue 2: Rail run and re-install assets
+```bash 
+bundle exec rails server
+bundle exec rake canvas:compile_assets
+```
