@@ -17,3 +17,15 @@ vi:
 bundle exec rails server
 bundle exec rake canvas:compile_assets
 ```
+
+4. Reset password admin role
+
+```bash
+rails console/c
+p = Pseudonym.first
+p.password = p.password_confirmation = 'somepassword'
+p.save!
+p.unique_id
+```
+
+That will change your password, and output your username.
