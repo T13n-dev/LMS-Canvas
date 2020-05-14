@@ -1,5 +1,5 @@
 # Các quy định về viết code Ruby on Rails (Tập các kiểu chuẩn)
-
+# https://github.com/framgia/coding-standards/blob/master/vn/rails/standard.md
 ## Thiết lập
 
 * Những thiết lập của ứng dụng đặt trong thư mục ``` config/initializers ```. Những đoạn code được đặt trong này sẽ được chạy khi ứng dụng khởi tạo.
