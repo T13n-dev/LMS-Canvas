@@ -37,6 +37,8 @@ end
 ```
 
 * Sử dụng block để nhóm lại khi có nhiều ``` member/collection ```
+* A member route will require an ID, because it acts on a member. A collection route doesn't because it acts on a collection of objects. Preview is an example of a member route, because it acts on (and displays) a single object. Search is an example of a collection route, because it acts on (and displays) a collection of objects.
+* Xem tham khảo https://www.youtube.com/watch?v=q6C1vCIez_s
 
 ```ruby
 resources :subscriptions do
