@@ -615,3 +615,12 @@ Bundler.require(platform)
 ```
 
 * Không xoá ``` Gemfile.lock ``` trong version management system. File này nhằm đảm bảo môi trường phát triển của developer nào cũng chạy gem cùng phiên bản khi ``` bundle install ```.
+
+
+<%= link_to '<button type="button" class="Button"> Disabled Account </button>'.html_safe, :controller => "accounts", :tab => "disabled" %>
+
+  def active_tab(tab, param = 'tab')
+    if request.params[ param ] == tab
+      'disabled';
+    end
+  end
