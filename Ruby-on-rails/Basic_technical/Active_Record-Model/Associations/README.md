@@ -2,16 +2,6 @@
 
 ## Một vài thứ để bắt đầu
 Link document [active_record_basics](https://github.com/cgriego/active_attr)
-* Naming Conventions Rails sẽ pluralize tên class để tìm bảng database tương ứng. ( class Book, bảng database được gọi books).
-
-| Model/ Class  | Table/ Schema |
-| --- | --- |
-| Article  | articles  |
-| LineItem  | line_items  |
-| Deer | deers |
-| Mouse | mice |
-| Person | people |
-
 * Active Record là M trong MVC - the model 
 * Có thể sử dụng model không cần dựa trên ActiveRecord
 * Cố gắng đặt tên ngắn, dễ hiểu nhưng không giản lược quá mức.
@@ -33,10 +23,23 @@ class Message
   validates_length_of :content, :maximum => 500
 end
 ```
+### Naming Conventions 
+Rails sẽ pluralize tên class để tìm bảng database tương ứng. ( class Book, bảng database được gọi books).
 
-### ActiveRecord
+| Model/ Class  | Table/ Schema |
+| --- | --- |
+| Article  | articles  |
+| LineItem  | line_items  |
+| Deer | deers |
+| Mouse | mice |
+| Person | people |
 
-* Phải sử dụng những database có sẵn, nếu không có lý do chính đáng thì không thay đổi những thứ mặc định của ActiveRecord như tên bảng hay là primary key.
+### Schema Conventions
+Active Record sử dụng các quy ước đặt tên cho các cột trong bảng cơ sở dữ liệu, tùy thuộc vào mục đích của các cột này.
+    * __Foreign keys__
+    *
+
+Phải sử dụng những database có sẵn, nếu không có lý do chính đáng thì không thay đổi những thứ mặc định của ActiveRecord như tên bảng hay là primary key.
 
 ```ruby
 # Không tốt - không làm thế này nếu như có thể thay đổi thay đổi schema
