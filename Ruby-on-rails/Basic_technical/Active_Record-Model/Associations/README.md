@@ -130,3 +130,18 @@ end
 * Không dùng ``` default_scope ``` ngoài việc liên quan đến xoá logic. Ngoài ra trong trường hợp này không được dùng ``` order ```.
 
 * Một khi đã dùng `has_many` hoặc `has_one` đối với một model thì nhất định phải khai báo `belongs_to` với model tương ứng.
+
+### Validation 
+Active Record cho phép bạn xác thực trạng thái của một model trước khi nó được ghi vào cơ sở dữ liệu. Có một số phương pháp mà bạn có thể sử dụng để kiểm tra các model và xác thực rằng giá trị thuộc tính không trống, là duy nhất và chưa có trong cơ sở dữ liệu, tuân theo một định dạng cụ thể và nhiều định dạng khác.
+Validation is a very important issue to consider when persisting to the database, so the methods save and update take it into account when running: they return false when validation fails and they don't actually perform any operations on the database. All of these have a bang counterpart (that is, save! and update!), which are stricter in that they raise the exception ActiveRecord::RecordInvalid if validation fails. A quick example to illustrate:
+
+```ruby
+class User < ApplicationRecord
+  validates :name, presence: true
+end
+ 
+user = User.new
+user.save  # => false
+user.save! # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
+```
+Xem thêm tại [Active Record Validations guide](https://guides.rubyonrails.org/active_record_validations.html)
