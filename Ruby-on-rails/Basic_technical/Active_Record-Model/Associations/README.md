@@ -36,8 +36,9 @@ Rails sẽ pluralize tên class để tìm bảng database tương ứng. ( clas
 
 ### Schema Conventions
 Active Record sử dụng các quy ước đặt tên cho các cột trong bảng cơ sở dữ liệu, tùy thuộc vào mục đích của các cột này.
-    - __Foreign keys__ - Các trường này phải đặt tên theo mẫu `singularized_table_name_id` ( Ví dụ: item_id, order_id ). Đây là các trường mà Active Record sẽ tìm kiếm khi bạn tạo liên kết giữa các mô hình của mình.  
-    - __Primary keys__ - Bởi mặc định, Active Record sẽ sử dụng một cột số nguyên tên id làm khóa chính của bảng ( bigint co PostgreSQL và MySQL, integer cho SQLite). Khi sử dụng [Active Record Migrations](https://guides.rubyonrails.org/active_record_migrations.html) để tạo bảng, cột này sẽ tự động được tạo.
+
+* __Foreign keys__ - Các trường này phải đặt tên theo mẫu `singularized_table_name_id` ( Ví dụ: item_id, order_id ). Đây là các trường mà Active Record sẽ tìm kiếm khi bạn tạo liên kết giữa các mô hình của mình.  
+* __Primary keys__ - Bởi mặc định, Active Record sẽ sử dụng một cột số nguyên tên id làm khóa chính của bảng ( bigint co PostgreSQL và MySQL, integer cho SQLite). Khi sử dụng [Active Record Migrations](https://guides.rubyonrails.org/active_record_migrations.html) để tạo bảng, cột này sẽ tự động được tạo.
 
 Phải sử dụng những database có sẵn, nếu không có lý do chính đáng thì không thay đổi những thứ mặc định của ActiveRecord như tên bảng hay là primary key.
 
