@@ -3,8 +3,9 @@
 ## Một vài thứ để bắt đầu
 Link document [active_record_basics](https://github.com/cgriego/active_attr)
 * Naming Conventions Rails sẽ pluralize tên class để tìm bảng database tương ứng. ( class Book, bảng database được gọi books).
+
 | Model/ Class  | Table/ Schema |
-| ------------- | ------------- |
+| --- | --- |
 | Article  | articles  |
 | LineItem  | line_items  |
 | Deer | deers |
