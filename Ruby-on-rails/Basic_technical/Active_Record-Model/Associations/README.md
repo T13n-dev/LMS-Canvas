@@ -1,7 +1,7 @@
 # Active record 
 
-## Vài thứ để bắt đầu
-[link](https://github.com/cgriego/active_attr)
+## Một vài thứ để bắt đầu
+Link document [active_record_basics](https://github.com/cgriego/active_attr)
 * Naming Conventions Rails sẽ pluralize tên class để tìm bảng database tương ứng. ( class Book, bảng database được gọi books).
 * Active Record là M trong MVC - the model 
 * Có thể sử dụng model không cần dựa trên ActiveRecord
