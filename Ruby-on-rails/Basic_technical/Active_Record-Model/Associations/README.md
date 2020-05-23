@@ -132,8 +132,8 @@ end
 * Một khi đã dùng `has_many` hoặc `has_one` đối với một model thì nhất định phải khai báo `belongs_to` với model tương ứng.
 
 ### Validation 
-Active Record cho phép bạn xác thực trạng thái của một model trước khi nó được ghi vào cơ sở dữ liệu. Có một số phương pháp mà bạn có thể sử dụng để kiểm tra các model và xác thực rằng giá trị thuộc tính không trống, là duy nhất và chưa có trong cơ sở dữ liệu, tuân theo một định dạng cụ thể và nhiều định dạng khác.
-Validation is a very important issue to consider when persisting to the database, so the methods save and update take it into account when running: they return false when validation fails and they don't actually perform any operations on the database. All of these have a bang counterpart (that is, save! and update!), which are stricter in that they raise the exception ActiveRecord::RecordInvalid if validation fails. A quick example to illustrate:
+* Active Record cho phép bạn xác thực trạng thái của một model trước khi nó được ghi vào cơ sở dữ liệu. Có một số phương pháp mà bạn có thể sử dụng để kiểm tra các model và xác thực rằng giá trị thuộc tính không trống, là duy nhất và chưa có trong cơ sở dữ liệu, tuân theo một định dạng cụ thể và nhiều định dạng khác.
+* Validation is a very important issue to consider when persisting to the database, so the methods save and update take it into account when running: they return false when validation fails and they don't actually perform any operations on the database. All of these have a bang counterpart (that is, save! and update!), which are stricter in that they raise the exception ActiveRecord::RecordInvalid if validation fails. A quick example to illustrate:
 
 ```ruby
 class User < ApplicationRecord
@@ -145,3 +145,7 @@ user.save  # => false
 user.save! # => ActiveRecord::RecordInvalid: Validation failed: Name can't be blank
 ```
 Xem thêm tại [Active Record Validations guide](https://guides.rubyonrails.org/active_record_validations.html)
+
+
+### Callbacks
+Active Record callbacks allow you to attach code to certain events in the life-cycle of your models. This enables you to add behavior to your models by transparently executing code when those events occur, like when you create a new record, update it, destroy it, and so on. You can learn more about callbacks in the [Active Record Callbacks guide](https://guides.rubyonrails.org/active_record_callbacks.html).
