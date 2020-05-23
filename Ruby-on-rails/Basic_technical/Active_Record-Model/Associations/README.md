@@ -5,7 +5,6 @@ Link document [active_record_basics](https://github.com/cgriego/active_attr)
 * Active Record là M trong MVC - the model 
 * Có thể sử dụng model không cần dựa trên ActiveRecord
 * Cố gắng đặt tên ngắn, dễ hiểu nhưng không giản lược quá mức.
-* Sử dụng gem [ActiveAttr](https://github.com/cgriego/active_attr) khi cần có những thao tác của ActiveRecord giống như validation trong model.
 
 ```ruby
 class Message
@@ -132,6 +131,7 @@ end
 * Một khi đã dùng `has_many` hoặc `has_one` đối với một model thì nhất định phải khai báo `belongs_to` với model tương ứng.
 
 ### Validation 
+* Sử dụng gem [ActiveAttr](https://github.com/cgriego/active_attr) khi cần có những thao tác của ActiveRecord giống như validation trong model.
 * Active Record cho phép bạn xác thực trạng thái của một model trước khi nó được ghi vào cơ sở dữ liệu. Có một số phương pháp mà bạn có thể sử dụng để kiểm tra các model và xác thực rằng giá trị thuộc tính không trống, là duy nhất và chưa có trong cơ sở dữ liệu, tuân theo một định dạng cụ thể và nhiều định dạng khác.
 * Validation is a very important issue to consider when persisting to the database, so the methods save and update take it into account when running: they return false when validation fails and they don't actually perform any operations on the database. All of these have a bang counterpart (that is, save! and update!), which are stricter in that they raise the exception ActiveRecord::RecordInvalid if validation fails. A quick example to illustrate:
 
