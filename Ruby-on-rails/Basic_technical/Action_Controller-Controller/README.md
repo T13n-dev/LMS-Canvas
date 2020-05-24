@@ -1,6 +1,7 @@
 # Action Controller
 
 ## Controller
+
 Action Controller is the C in MVC.
 Link document [action_controller_overview](https://guides.rubyonrails.org/action_controller_overview.html)
 
@@ -76,4 +77,86 @@ Ngăn chặn việc phát sinh nhiều xử lý khi mà người dùng thao tác
 # cách viết cũng tốt
 
   before_action ->{@users = User.all} # lambda
+```
+
+## Routing
+
+* Khi cần phải thêm action vào RESTful resource thì sử dụng ``` member ``` và ``` collection ```
+
+```ruby
+# cách viết không tốt
+get 'subscriptions/:id/unsubscribe'
+resources :subscriptions
+
+# cách viết tốt
+resources :subscriptions do
+  get 'unsubscribe', on: :member
+end
+
+# cách viết không tốt
+get 'photos/search'
+resources :photos
+
+# cách viết tốt
+resources :photos do
+  get 'search', on: :collection
+end
+```
+
+* Sử dụng block để nhóm lại khi có nhiều ``` member/collection ```
+* A member route will require an ID, because it acts on a member. A collection route doesn't because it acts on a collection of objects. Preview is an example of a member route, because it acts on (and displays) a single object. Search is an example of a collection route, because it acts on (and displays) a collection of objects.
+* Xem tham khảo https://www.youtube.com/watch?v=q6C1vCIez_s
+
+```ruby
+resources :subscriptions do
+  member do
+    get 'unsubscribe'
+    get 'subscribe'
+  end
+end
+
+resources :photos do
+  collection do
+    get 'search'
+    get 'trashes'
+  end
+end
+```
+
+* Sử dụng routes lồng nhau (nested routes) để thể hiện mối quan hệ của các model trong ActiveRecord
+
+```ruby
+class Post < ActiveRecord::Base
+  has_many :comments
+end
+
+class Comments < ActiveRecord::Base
+  belongs_to :post
+end
+
+# routes.rb
+resources :posts do
+  resources :comments
+end
+```
+
+* Sử dụng namespace để nhóm các action liên quan
+
+```ruby
+namespace :admin do
+  # Directs /admin/products/* to Admin::ProductsController
+  # (app/controllers/admin/products_controller.rb)
+  resources :products
+end
+```
+
+* Không sử dụng wild controller route trước đây
+
+**Lý do**
+
+Viết theo cách này sẽ làm cho tất cả action của mọi controller có thể bị truy cập bằng GET request
+
+```ruby
+# Cách viết cực kỳ không tốt
+match ':controller(/:action(/:id(.:format)))'
 ```
