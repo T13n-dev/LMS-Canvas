@@ -1,7 +1,7 @@
 # Active record 
 
 ## Một vài thứ để bắt đầu
-Link document [active_record_basics](https://github.com/cgriego/active_attr)
+Link document [active_record_basics](https://guides.rubyonrails.org/active_record_basics.html)
 * Active Record là M trong MVC - the model 
 * Có thể sử dụng model không cần dựa trên ActiveRecord
 * Cố gắng đặt tên ngắn, dễ hiểu nhưng không giản lược quá mức.
