@@ -1,5 +1,5 @@
 # Sưu tầm Tips trong Ruby on Rails
-# [Các quy định về viết code Ruby on Rails (Tập các kiểu chuẩn)](https://github.com/framgia/coding-standards/blob/master/vn/rails/standard.md)
+* [Các quy định về viết code Ruby on Rails (Tập các kiểu chuẩn)](https://github.com/framgia/coding-standards/blob/master/vn/rails/standard.md)
 
 ## Thiết lập
 
