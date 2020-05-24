@@ -1,6 +1,8 @@
 # Action Controller
 
 ## Controller
+Action Controller is the C in MVC.
+Link document [action_controller_overview](https://guides.rubyonrails.org/action_controller_overview.html)
 
 *  Cố gắng gọt giũa nội dung của controller. Trong controller chỉ nên thực hiện việc lấy những data mà bên view cần, không code business logic ở đây. (Những cái đó nên viết trong model)
 
